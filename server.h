@@ -1,6 +1,4 @@
-#ifndef SERVER_H
-#define SERVER_H
-
+#pragma once 
 #include <grpcpp/grpcpp.h>
 #include "asset_detection.h"
 
@@ -11,6 +9,5 @@ public:
     void runServer();
 };
 
-} 
+} //namespace AssetInspection 
 
-#endif 

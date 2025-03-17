@@ -3,8 +3,8 @@
 
 
 namespace AssetInspection {
-//数据格式为 ip:timeout:count
 grpc::Status AssetInspectionServiceImpl::CheckIP(grpc::ServerContext *context, const Check *request, IPResponse *response) {
+    //request 数据格式为 ip:timeout:count
     std::string target = request->target();
     std::string ip ;
     int timeout, count,delay = -1, loss = 100;
@@ -25,9 +25,8 @@ grpc::Status AssetInspectionServiceImpl::CheckIP(grpc::ServerContext *context, c
     return grpc::Status::OK;
 }
 
-//数据格式为ip:port:timeout
 grpc::Status AssetInspectionServiceImpl::CheckPort(grpc::ServerContext *context, const Check *request, TCPResponse *response) {
-
+    //request 数据格式为ip:port:timeout
     std::string target = request->target();
     std::string ip;
     int port ,timeout;

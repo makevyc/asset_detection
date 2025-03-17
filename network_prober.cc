@@ -1,4 +1,3 @@
-// network_prober.cc
 #include "network_prober.h"
 
 NetworkProber::NetworkProber() : sock_(-1) {}

@@ -1,5 +1,4 @@
-#ifndef NETWORK_PROBER_H
-#define NETWORK_PROBER_H
+#pragma once
 #include "grpc/text.grpc.pb.h"
 #include "grpc/text.pb.h"
 #include "network_prober.h"
@@ -20,7 +19,7 @@ public:
     grpc::Status CheckPort(grpc::ServerContext *context, const Check *request, TCPResponse *response) override;
 private:
     void splitRequest(std::string &request, std::string &param1, int &param2, int &param3);
-    std::string getCurrentTimeWithMilliseconds();//获取时间，用于打印日志
+    std::string getCurrentTimeWithMilliseconds();
 
 private:
     NetworkProber network_prober_;
@@ -29,4 +28,3 @@ private:
 
 } // namespace AssetInspection
 
-#endif

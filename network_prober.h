@@ -1,4 +1,4 @@
-
+#pragma once 
 #include <iostream>
 #include <memory>
 #include <string>
@@ -31,13 +31,14 @@ private:
         struct icmphdr hdr_;
         char datas_[PACKET_SIZE - sizeof(icmphdr)];
     };
+
+private:
     unsigned short checkSum(unsigned short *buffer, int length);
     bool solveHostName(const std::string& hostname);
     bool initSocket(const std::string& host, const __suseconds_t timeout);
     void createIcmp(int seq, IcmpPacket& pkt);
     bool recvPing(int timeout, int seq);
     bool sendPing(const int count, const __suseconds_t timeout, int& success, double& total_rtt,timeval& send_time);
-
 
 private:
     int sock_;
