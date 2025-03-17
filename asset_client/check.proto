@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package AssetInspection;
+
+service AssetInspectionService {
+  rpc CheckIP (Check) returns (IPResponse) {}
+  rpc CheckPort (Check) returns (TCPResponse) {}
+}
+
+message Check {
+  string target = 1;
+}
+
+message IPResponse {
+  int32 delay = 1;
+  int32 loss = 2;
+}
+
+message TCPResponse {
+  bool flag = 1;
+}
