@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 asgvascxz
 casvfa
 
+======
+这是分支2的修改
+asdafa
+>>>>>>> conflict-branch2
